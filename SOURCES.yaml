@@ -1,0 +1,57 @@
+schema_version: 1
+minimum_reliable_sources_per_story: 1
+unknown_source_allowed: false
+levels:
+  primary_official:
+    rank: 1
+    categories:
+      - 品牌官方
+      - 政府或监管机构
+      - 证券交易所公告
+    use: "用于原始声明、政策、监管、召回和法定披露；品牌自述不能替代独立核验。"
+  professional_media:
+    rank: 2
+    categories:
+      - 主流汽车媒体
+      - 主流财经媒体
+    use: "用于背景、采访和交叉核验；必须保存原文链接、作者和发布时间。"
+  industry_data:
+    rank: 3
+    categories:
+      - 行业数据库
+    use: "用于销量、价格和行业趋势；必须记录统计口径、覆盖范围和更新时间。"
+reliable_categories:
+  - 品牌官方
+  - 政府或监管机构
+  - 证券交易所公告
+  - 主流汽车媒体
+  - 主流财经媒体
+  - 行业数据库
+enhanced_verification:
+  accident:
+    required_primary_category: 政府或监管机构
+    second_reliable_source_required: true
+  recall:
+    required_primary_categories:
+      - 政府或监管机构
+      - 品牌官方
+    second_reliable_source_required: true
+  policy:
+    required_primary_category: 政府或监管机构
+    second_reliable_source_required: true
+  casualty:
+    required_primary_category: 政府或监管机构
+    second_reliable_source_required: true
+  financial_data:
+    required_primary_category: 证券交易所公告
+    second_reliable_source_required: true
+source_record_required_fields:
+  - source_id
+  - category
+  - title
+  - url
+  - publisher
+  - published_at
+  - collected_at
+  - evidence_excerpt
+  - claim_ids

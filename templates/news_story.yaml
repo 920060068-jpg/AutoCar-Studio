@@ -1,0 +1,40 @@
+schema_version: 2
+template_name: news_story
+topic_type: general_automotive_news
+risk_level: standard
+news:
+  news_id: "<required>"
+  headline: "<source-faithful headline>"
+  category: "<required>"
+  published_at: "<ISO-8601>"
+  source_ids:
+    - "<reliable_source_id>"
+hook:
+  text: "<verified change and why it matters>"
+  claim_ids:
+    - "<claim_id>"
+facts:
+  - text: "<verified fact>"
+    claim_id: "<claim_id>"
+    context: "<time region model or statistical scope>"
+analysis:
+  text: "<bounded editorial analysis>"
+  basis_claim_ids: []
+  label: editorial_analysis
+impact:
+  consumer: "<direct effect or no confirmed effect>"
+  industry: "<evidence-based effect or watch point>"
+  uncertainty: "<required>"
+cta:
+  text: "<specific neutral question>"
+  sensitive_topic_allowed: false
+pipeline_mapping:
+  Hook: hook
+  Facts: facts
+  Analysis: analysis
+  Impact: impact
+  CTA: cta
+approval:
+  status: draft
+  approved_by: ""
+  approved_at: ""

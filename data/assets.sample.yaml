@@ -1,0 +1,91 @@
+schema_version: 2
+dataset: synthetic_foundation_sample
+manifest:
+  job_id: foundation_sample_job
+  revision: 1
+  storyboard_path: data/storyboard.sample.yaml
+  assets:
+    - asset_id: foundation_doc
+      shot_id: shot_01
+      additional_shot_ids:
+        - shot_03
+      type: document
+      required: true
+      source:
+        source_type: project_owned
+        owner: AutoCar Studio
+        url: ""
+        local_path: assets/README.md
+        provider: local
+        collected_at: ""
+        sha256: "51d2cfcdf4b83a5b28f16d2d9e3a5722e855df8e856c429497049f3baa086e0c"
+      license:
+        status: project_owned
+        type: project_internal
+        commercial_use: false
+        platforms: []
+        territories: []
+        proof_path: assets/README.md
+        expires_at: ""
+      preview_frame: ""
+      quality:
+        width: 0
+        height: 0
+        duration_seconds: 0
+        sample_rate_hz: 0
+        low_resolution: false
+        watermark_status: none
+        semantic_match_status: approved
+      duplicate:
+        exact_duplicate_of: ""
+        possible_duplicate_of: ""
+        reuse_reason: "reused by shot_01 and shot_03"
+      generation:
+        provider: ""
+        model: ""
+        prompt_digest: ""
+        generated_at: ""
+      status: project_owned
+    - asset_id: brand_style
+      shot_id: shot_02
+      additional_shot_ids: []
+      type: configuration
+      required: true
+      source:
+        source_type: project_owned
+        owner: AutoCar Studio
+        url: ""
+        local_path: brand_styles/autocar_default.yaml
+        provider: local
+        collected_at: ""
+        sha256: "7235e98c682d9ea8d9b5c665f90cd278e9a5cde829101d837b562e8aaed5362c"
+      license:
+        status: project_owned
+        type: project_internal
+        commercial_use: false
+        platforms: []
+        territories: []
+        proof_path: brand_styles/autocar_default.yaml
+        expires_at: ""
+      preview_frame: ""
+      quality:
+        width: 0
+        height: 0
+        duration_seconds: 0
+        sample_rate_hz: 0
+        low_resolution: false
+        watermark_status: none
+        semantic_match_status: approved
+      duplicate:
+        exact_duplicate_of: ""
+        possible_duplicate_of: ""
+        reuse_reason: ""
+      generation:
+        provider: ""
+        model: ""
+        prompt_digest: ""
+        generated_at: ""
+      status: project_owned
+  verified_data_bindings: []
+  gaps: []
+  validation_status: passed

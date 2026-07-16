@@ -1,0 +1,28 @@
+schema_version: 1
+dataset: synthetic_foundation_sample
+deduplication_scope:
+  current_date: "2026-07-13"
+  history_window_start: "2026-06-13"
+  history_window_end: "2026-07-13"
+topics:
+  - topic_id: sample_001
+    title: "示例品牌发布测试车型 A 的更新说明"
+    normalized_title: "示例品牌 测试车型A 更新说明"
+    topic_type: technology
+    published_at: "2026-07-13T09:00:00+08:00"
+    source_ids:
+      - synthetic_source_001
+  - topic_id: sample_002
+    title: "测试车型 A 更新说明由示例品牌发布"
+    normalized_title: "示例品牌 测试车型A 更新说明"
+    topic_type: technology
+    published_at: "2026-07-13T09:30:00+08:00"
+    source_ids:
+      - synthetic_source_002
+  - topic_id: sample_003
+    title: "行业样例数据库公布虚构月度销量口径"
+    normalized_title: "行业样例数据库 虚构 月度销量 口径"
+    topic_type: sales_ranking
+    published_at: "2026-07-13T10:00:00+08:00"
+    source_ids:
+      - synthetic_source_003

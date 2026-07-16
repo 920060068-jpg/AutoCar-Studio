@@ -1,0 +1,59 @@
+{
+  "name": "autocar-studio-v4-foundation",
+  "version": "4.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0 <25.0.0"
+  },
+  "scripts": {
+    "check:environment": "node --experimental-strip-types scripts/environment_check.ts",
+    "minimax:init": "node --experimental-strip-types scripts/init_minimax_env.ts",
+    "minimax:check": "node --experimental-strip-types scripts/minimax_connection_check.ts",
+    "minimax:tts": "node --experimental-strip-types scripts/minimax_tts.ts",
+    "audio:fit": "node --experimental-strip-types scripts/audio_fit_pipeline.ts",
+    "test:audio": "node --experimental-strip-types scripts/validate_audio_pipeline.ts",
+    "test:pronunciation": "node --experimental-strip-types scripts/validate_pronunciation_pipeline.ts",
+    "daily:status": "node --experimental-strip-types scripts/daily_status.ts",
+    "daily:check": "node --experimental-strip-types scripts/daily_startup_check.ts",
+    "daily:run": "node --experimental-strip-types scripts/daily_run.ts",
+    "daily:resume": "node --experimental-strip-types scripts/daily_resume.ts",
+    "test:daily": "node --experimental-strip-types scripts/validate_daily_automation.ts",
+    "test:regression": "node --experimental-strip-types scripts/validate_regression.ts",
+    "validate:baseline": "node --experimental-strip-types scripts/validate_baseline_manifest.ts",
+    "scan:secrets": "node --experimental-strip-types scripts/security_scan.ts",
+    "validate:os": "node --experimental-strip-types scripts/validate_operating_system.ts",
+    "typecheck": "tsc --noEmit",
+    "remotion:studio": "remotion studio src/remotion/index.ts",
+    "remotion:render:test": "remotion render src/remotion/index.ts AutoCarStudioTest output/tests/autocar-studio-sprint1.mp4",
+    "remotion:render:motion-test": "remotion render src/remotion/index.ts AutoCarStudioMotionTest output/tests/autocar-studio-sprint2-motion.mp4",
+    "remotion:render:milestone1:visual": "remotion render src/remotion/index.ts AutoCarMilestone1FJ output/milestone1/m1_land_cruiser_fj_20260713_r1/media/autocar-m1-land-cruiser-fj-visual-review-no-voice.mp4 --codec=h264 --crf=18",
+    "validate:config": "node --experimental-strip-types scripts/validate_config.ts",
+    "validate:topics": "node --experimental-strip-types scripts/deduplicate_topics.ts",
+    "validate:storyboard": "node --experimental-strip-types scripts/validate_storyboard.ts",
+    "validate:assets": "node --experimental-strip-types scripts/validate_assets.ts",
+    "assets:cache:check": "node --experimental-strip-types scripts/check_asset_cache.ts",
+    "assets:manifest": "node --experimental-strip-types scripts/generate_asset_manifest.ts",
+    "media:discover": "node --experimental-strip-types src/media_acquisition/index.ts discover",
+    "media:acquire": "node --experimental-strip-types src/media_acquisition/index.ts acquire",
+    "media:inspect": "node --experimental-strip-types src/media_acquisition/index.ts inspect",
+    "media:manifest": "node --experimental-strip-types src/media_acquisition/index.ts manifest",
+    "validate:qc": "node --experimental-strip-types scripts/qc.ts data/qc.sample.yaml --schema-only"
+  },
+  "dependencies": {
+    "@remotion/media": "4.0.487",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "4.0.487"
+  },
+  "devDependencies": {
+    "@remotion/cli": "4.0.487",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.8.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true
+  }
+}

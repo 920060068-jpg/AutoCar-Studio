@@ -1,0 +1,47 @@
+schema_version: 1
+style_id: xiaomi_editorial
+brand: Xiaomi Auto
+status: editorial_reference
+official_brand_guideline: false
+visual_identity:
+  principles:
+    - human_centered_technology
+    - product_clarity
+    - connected_ecosystem
+  composition: "simple product framing with interaction steps and data kept readable"
+  logo_policy: "use only cleared original assets; never recreate or imply endorsement"
+color_direction:
+  base:
+    - clean_white
+    - graphite
+  accents:
+    - warm_orange
+    - technical_blue
+  contrast: bright_clean_legibility
+camera_style:
+  preferred_shots:
+    - product_three_quarter
+    - interface_interaction
+    - cabin_ecosystem
+  focal_length_mm:
+    - 35
+    - 50
+    - 85
+  composition: product_then_interaction
+motion_style:
+  tone: responsive_clean_product_demo
+  preferred:
+    - short_push_in
+    - interface_step_reveal
+    - matched_action_cut
+  prohibited:
+    - excessive_ui_animation
+    - unverified_ecosystem_behavior
+audio_style:
+  narrator:
+    provider: minimax
+    voice: "沉曜男声"
+  bgm: light_modern_electronic
+  ambience: clean_cabin_city_and_device_interaction
+  vehicle_sfx: "authentic electric driving and interface cues only"
+  mix_priority: narration_and_interaction_clarity

@@ -1,0 +1,102 @@
+schema_version: 2
+dataset: synthetic_render_engine_test
+storyboard:
+  job_id: render_engine_test_job
+  revision: 1
+  aspect_ratio: "9:16"
+  width: 1080
+  height: 1920
+  fps: 30
+  total_duration_seconds: 42
+  brand_style: brand_styles/autocar_default.yaml
+  presentation_format: dynamic_editorial_video
+  static_slideshow_allowed: false
+  shots:
+    - shot_id: test_shot_01
+      script_segment_id: test_segment_01
+      start_seconds: 0
+      duration: 21
+      visual:
+        description: "Phase 6 本地渲染工程标题测试"
+        purpose: "验证竖屏构图、标题安全区和基础时间线字段"
+        claim_ids:
+          - synthetic_render_claim_001
+        on_screen_text: "AutoCar Studio V4"
+        lighting: neutral_editorial
+      camera:
+        shot_size: medium
+        focal_length_mm: 50
+        angle: eye_level
+      movement:
+        type: locked
+        direction: none
+        speed: controlled
+        plan: "仅描述合成测试构图，不调用任何动画引擎"
+      audio:
+        narration: "synthetic render segment 01"
+        claim_ids:
+          - synthetic_render_claim_001
+        ambience: ""
+        sync_notes: "audio not generated"
+      asset:
+        request_ids:
+          - foundation_doc
+        required: true
+        fallback_request_id: ""
+      engine: remotion
+      segment_role: visual_segment
+      engine_reason: "由本地主时间线承载合成测试画面"
+      presenter_required: false
+      presenter_reason: ""
+      preview_frame: output/previews/render_engine_test/test_shot_01.png
+      preview_status: planned
+      subtitle_safe_area: brand_default
+      transition_in: none
+      transition_out: controlled_crossfade
+      copyright_status: project_owned
+    - shot_id: test_shot_02
+      script_segment_id: test_segment_02
+      start_seconds: 21
+      duration: 21
+      visual:
+        description: "自动审核状态测试"
+        purpose: "验证测试项目不能越过 QC 和自动审核门禁"
+        claim_ids:
+          - synthetic_render_claim_002
+        on_screen_text: "仅限本地测试"
+        lighting: neutral_editorial
+      camera:
+        shot_size: close_up
+        focal_length_mm: 70
+        angle: eye_level
+      movement:
+        type: locked
+        direction: none
+        speed: controlled
+        plan: "保持受控测试构图，不模拟正式成片"
+      audio:
+        narration: "synthetic render segment 02"
+        claim_ids:
+          - synthetic_render_claim_002
+        ambience: ""
+        sync_notes: "audio not generated"
+      asset:
+        request_ids:
+          - brand_style
+        required: true
+        fallback_request_id: ""
+      engine: remotion
+      segment_role: visual_segment
+      engine_reason: "由本地主时间线显示测试状态"
+      presenter_required: false
+      presenter_reason: ""
+      preview_frame: output/previews/render_engine_test/test_shot_02.png
+      preview_status: planned
+      subtitle_safe_area: brand_default
+      transition_in: controlled_crossfade
+      transition_out: none
+      copyright_status: project_owned
+  approval:
+    status: pending
+    reviewer: ""
+    reviewed_at: ""

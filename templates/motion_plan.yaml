@@ -1,0 +1,46 @@
+schema_version: 1
+template_name: motion_plan
+motion_plan:
+  job_id: "<required>"
+  revision: 1
+  storyboard_path: "<required>"
+  storyboard_sha256: "<required>"
+  fps: 30
+  shots:
+    - shot_id: shot_01
+      movement:
+        type: "<locked|pan|tilt|push_in|pull_out|tracking|orbit>"
+        direction: none
+        speed: controlled
+        easing: "<linear|ease_in|ease_out|ease_in_out>"
+        start_frame: 0
+        end_frame: 149
+      camera:
+        shot_size: "<extreme_wide|wide|medium|close_up|detail>"
+        focal_length_mm: 35
+        angle: eye_level
+        continuity_notes: "<required>"
+      duration:
+        seconds: 5
+        frames: 150
+      effect:
+        type: "<none|title|data_card|chart|annotation|hud|mask>"
+        purpose: "<what the effect explains>"
+        claim_ids:
+          - "<claim_id>"
+        parameters: {}
+      transition:
+        in:
+          type: none
+          duration_frames: 0
+        out:
+          type: "<cut|crossfade|mask_wipe|match_cut>"
+          duration_frames: 8
+      owner: "<hyperframes_motion_component|remotion_timeline>"
+      preview_frame: "<approved local path>"
+      preview_sha256: "<required after approval>"
+      status: planned
+  approval:
+    status: pending
+    reviewer: ""
+    reviewed_at: ""

@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "dataset": "topic_history",
+  "purpose": "记录已审核选题及其去重特征，为后续选题判断信息增量和历史重复提供本地依据。",
+  "field_structure": {
+    "record_id": "全局唯一字符串",
+    "job_id": "关联生产任务 ID",
+    "revision": "正整数版本",
+    "topic_id": "选题 ID",
+    "canonical_topic": "标准化主题文本",
+    "category": "内容类别",
+    "source_ids": "可靠来源 ID 数组",
+    "claim_digest": "已核验核心事实摘要或哈希",
+    "risk_level": "low、medium、high 或 blocked",
+    "decision": "approved、deprioritized、rejected 或 blocked",
+    "decision_reason": "自动审核决定理由",
+    "historical_keys": "用于去重的实体、事件和时间键数组",
+    "created_at": "ISO-8601 时间",
+    "approved_by": "自动审核器或明确的人工覆盖者",
+    "supersedes": "被更正记录 ID 或空字符串"
+  },
+  "update_rules": [
+    "仅在事实核验、历史去重和自动选题审核完成后追加记录。",
+    "数据只追加，不覆盖或删除旧记录；更正时新增 revision 并填写 supersedes。",
+    "同一 job_id、topic_id 和 revision 不得重复。",
+    "不得记录未经核验的事实、个人信息、访问令牌或外部平台用户数据。",
+    "历史匹配必须保留匹配依据，不能仅凭标题相似自动拒绝选题。"
+  ],
+  "records": []
+}

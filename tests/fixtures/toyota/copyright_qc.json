@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "fixture": "toyota_official_asset_quality_and_copyright",
+  "asset": {
+    "source_type": "brand_official_press_asset",
+    "local_file_required": true,
+    "rights_status": "authorized",
+    "technical_quality": "pass"
+  },
+  "director_score": 93,
+  "final_quality_score": 95,
+  "gates": {
+    "fact_check": true,
+    "verified_data": true,
+    "storyboard": true,
+    "asset_or_original_visual_manifest": true,
+    "picture_render": true,
+    "picture_lock": true,
+    "pronunciation": true,
+    "audio": true,
+    "audio_sync": true,
+    "subtitle": true,
+    "final_render": true,
+    "technical_qc": true,
+    "content_qc": true,
+    "copyright_editorial_policy": true
+  }
+}

@@ -1,0 +1,31 @@
+schema_version: 1
+template_name: topic_score
+required_fields:
+  - topic_id
+  - title
+  - source_refs
+  - scores
+record:
+  topic_id: "<required>"
+  title: "<required>"
+  topic_type: "<required>"
+  source_refs:
+    - "<source_id>"
+  scores:
+    freshness: 0
+    public_interest: 0
+    automotive_relevance: 0
+    evidence_strength: 0
+    visual_potential: 0
+    asset_readiness: 0
+    audience_value: 0
+    copyright_risk: 0
+    safety_risk: 0
+  score_range: "0-10 per item"
+  total_score: 0
+  duplicate_group: ""
+  historical_match_ids: []
+  asset_readiness_status: unknown
+  decision: pending
+  decision_reason: "<required>"
+  reviewer: "<required before selection>"

@@ -1,0 +1,47 @@
+schema_version: 1
+style_id: mercedes_editorial
+brand: Mercedes-Benz
+status: editorial_reference
+official_brand_guideline: false
+visual_identity:
+  principles:
+    - modern_luxury
+    - technical_calm
+    - material_detail
+  composition: "ordered negative space with emphasis on cabin and surface quality"
+  logo_policy: "use only cleared original assets; never recreate or imply endorsement"
+color_direction:
+  base:
+    - deep_black
+    - silver
+  accents:
+    - warm_champagne
+    - soft_white
+  contrast: refined_high_legibility
+camera_style:
+  preferred_shots:
+    - elegant_three_quarter
+    - cabin_wide
+    - material_close_up
+  focal_length_mm:
+    - 50
+    - 70
+    - 100
+  composition: stable_symmetry_and_layered_depth
+motion_style:
+  tone: smooth_deliberate_premium
+  preferred:
+    - slow_dolly
+    - controlled_reveal
+    - soft_crossfade
+  prohibited:
+    - aggressive_whip_pan
+    - high_frequency_flash
+audio_style:
+  narrator:
+    provider: minimax
+    voice: "沉曜男声"
+  bgm: subtle_orchestral_electronic_hybrid
+  ambience: quiet_cabin_and_soft_environment
+  vehicle_sfx: "authentic and restrained; preserve powertrain identity"
+  mix_priority: narration_and_material_detail

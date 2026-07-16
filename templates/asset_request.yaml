@@ -1,0 +1,47 @@
+schema_version: 1
+template_name: asset_request
+request:
+  job_id: "<required>"
+  revision: 1
+  request_id: asset_request_001
+  shot_ids:
+    - shot_01
+  asset_type: "<evidence_document|official_photo|official_video|editorial_photo|editorial_video|product_detail|data_visual|ambient_broll|ai_generated|host_segment>"
+  purpose: "<what this asset must prove or explain>"
+  source:
+    priority: 1
+    source_type: "<project_owned|official_media_kit|public_institution|licensed_media|industry_database|ai_generated>"
+    owner: "<required>"
+    url: ""
+    local_evidence_path: "<required before clearance>"
+  license:
+    status: pending
+    type: "<required>"
+    commercial_use: false
+    platforms:
+      - douyin
+    territories:
+      - CN
+    valid_from: ""
+    expires_at: ""
+    attribution_required: false
+    proof_path: "<required before clearance>"
+  technical_requirements:
+    minimum_width: 1080
+    minimum_height: 1920
+    orientation: portrait_or_crop_safe
+    watermark_allowed: false
+  generation:
+    allowed: false
+    provider: ""
+    preview_frame: ""
+    prompt_digest: ""
+    terms_version: ""
+  fallback:
+    allowed: false
+    request_id: ""
+    notes: ""
+  status: planned
+  validation_notes: ""
+  reviewed_by: ""
+  reviewed_at: ""

@@ -1,0 +1,23 @@
+schema_version: 1
+template_name: sales_ranking
+topic_type: sales_ranking
+risk_level: standard
+required_facts:
+  - 数据发布机构
+  - 统计周期
+  - 批发、零售、上险或交付口径
+  - 地区与车型范围
+  - 同比和环比的基期
+narrative_beats:
+  - "榜单使用什么口径"
+  - "排名与变化"
+  - "可能原因与可验证证据"
+  - "不能从榜单直接推出什么"
+visual_intents:
+  - 排名条形图
+  - 口径和周期标签
+  - 同比环比拆分
+prohibited_shortcuts:
+  - 混用不同机构或统计口径
+  - 用单月排名证明长期趋势
+  - 把批发量写成终端销量

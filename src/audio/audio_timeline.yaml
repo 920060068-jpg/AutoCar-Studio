@@ -1,0 +1,28 @@
+schema_version: 1
+timeline_id: audio_timeline_template
+timebase: seconds
+narration_policy:
+  full_video_occupancy_required: false
+  natural_silence_between_shots_allowed: true
+  priority:
+    - natural_speech
+    - subtitle_synchronization
+    - visual_rhythm
+intentional_silence_windows: []
+tracks:
+  - track: voice
+    start: 0
+    duration: 1
+    volume: 1.0
+    effect: none
+  - track: music
+    start: 0
+    duration: 1
+    volume: 0.18
+    effect: duck_under_voice
+  - track: sfx
+    start: 0
+    duration: 1
+    volume: 0.7
+    effect: none
+status: template_only

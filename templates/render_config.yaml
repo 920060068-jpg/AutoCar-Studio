@@ -1,0 +1,47 @@
+schema_version: 1
+template_name: render_config
+render_config:
+  job_id: "<required>"
+  revision: 1
+  resolution:
+    width: 1080
+    height: 1920
+    aspect_ratio: "9:16"
+  fps: 30
+  codec:
+    container: mp4
+    video: h264
+    profile: high
+    pixel_format: yuv420p
+    color_space: rec709
+    bitrate_mode: "<crf_or_target_bitrate>"
+    crf: 18
+  audio:
+    codec: aac
+    sample_rate_hz: 48000
+    channels: 2
+    bitrate_kbps: 192
+    target_lufs: -16
+    true_peak_dbtp: -1
+  duration:
+    min_seconds: 25
+    max_seconds: 60
+    expected_seconds: 40
+  inputs:
+    storyboard_path: "<required>"
+    asset_manifest_path: "<required>"
+    motion_plan_path: "<required>"
+    audio_plan_path: "<required before render>"
+    caption_path: "<required before render>"
+  output:
+    directory: output/runtime/<job_id>/<revision>
+    filename: final.mp4
+    overwrite: false
+  execution:
+    external_api_allowed: false
+    auto_publish: false
+    status: not_executed
+  approval:
+    status: pending
+    reviewer: ""
+    reviewed_at: ""

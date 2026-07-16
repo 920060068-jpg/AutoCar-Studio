@@ -1,0 +1,42 @@
+schema_version: 1
+style_id: autocar_default
+name: AutoCar Editorial Signal
+status: foundation_default
+canvas:
+  aspect_ratio: "9:16"
+  width: 1080
+  height: 1920
+palette:
+  background: "#111315"
+  surface: "#1B1F23"
+  primary_text: "#F4F1EA"
+  secondary_text: "#B8BDC3"
+  signal: "#E5483F"
+  data_accent: "#38C7C1"
+typography:
+  display_family: "Noto Sans SC"
+  data_family: "Inter"
+  fallback_family: "sans-serif"
+  headline_min_px: 72
+  body_min_px: 32
+  data_label_min_px: 26
+layout:
+  safe_top_px: 150
+  safe_right_px: 150
+  safe_bottom_px: 260
+  safe_left_px: 90
+  grid_columns: 6
+motion:
+  tone: precise_editorial
+  entrance: "short deceleration with one dominant direction"
+  transition: "masked wipe or controlled crossfade"
+  ambient_motion: minimal
+preview:
+  required: true
+  becomes_first_frame_reference: true
+prohibited_patterns:
+  - 无目的持续缩放
+  - 全屏高频闪烁
+  - 无依据的赛博蓝默认模板
+  - 多种字体和强调色同时竞争
+  - 为装饰牺牲数字和来源可读性

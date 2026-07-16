@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "production_date": "2026-07-14",
+  "job_id": "daily_2026-07-14_interrupted",
+  "revision": 2,
+  "stage_run_id": "fixture-script-stage",
+  "current_stage": "storyboard",
+  "last_successful_stage": "script",
+  "created_at": "2026-07-14T04:19:00.000Z",
+  "updated_at": "2026-07-14T04:20:00.000Z",
+  "input_paths": [],
+  "output_paths": [],
+  "paid_api_receipts": []
+}

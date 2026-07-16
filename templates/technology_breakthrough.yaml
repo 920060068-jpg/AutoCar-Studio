@@ -1,0 +1,42 @@
+schema_version: 2
+template_name: technology_breakthrough
+topic_type: technology_breakthrough
+canonical_detail_template: templates/technology.yaml
+risk_level: elevated_claim_risk
+hook:
+  text: "<verified problem and measurable change>"
+  claim_ids:
+    - "<claim_id>"
+facts:
+  problem: "<real user or engineering problem>"
+  solution: "<provider description with source label>"
+  current_status: "<research|announced|testing|mass_production|delivering>"
+  verified_metrics: []
+  claim_ids: []
+analysis:
+  mechanism: "<plain-language explanation>"
+  comparison_scope: "<same-condition baseline>"
+  limitations: []
+  basis_claim_ids: []
+  label: editorial_analysis
+impact:
+  real_value: "<current measurable user value>"
+  future_effect: "<bounded projection>"
+  dependencies: []
+  uncertainty: "<required>"
+cta:
+  text: "<neutral question about current value versus future potential>"
+  sensitive_topic_allowed: false
+pipeline_mapping:
+  Hook: hook
+  Facts: facts
+  Analysis: analysis
+  Impact: impact
+  CTA: cta
+validation:
+  - 使用 canonical_detail_template 检查指标条件、量产状态、适用车型和限制
+  - 禁止把实验室数据、发布概念或未来预测写成当前用户体验
+approval:
+  status: draft
+  approved_by: ""
+  approved_at: ""

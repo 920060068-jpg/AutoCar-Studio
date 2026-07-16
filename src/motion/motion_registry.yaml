@@ -1,0 +1,155 @@
+schema_version: 1
+registry_name: autocar_motion_engine
+timebase:
+  fps: 30
+  duration_unit: frames
+ownership:
+  motion_contract: hyperframes
+  master_timeline: remotion
+camera:
+  - name: push_in
+    purpose: "受控接近车辆、数据或标题主体，提升关注度"
+    duration:
+      min_frames: 12
+      default_frames: 45
+      max_frames: 120
+    parameters:
+      start_scale: 1
+      end_scale: 1.08
+      intensity_min: 0
+      intensity_max: 2
+  - name: pull_out
+    purpose: "从细节退至环境，交代空间关系或结束段落"
+    duration:
+      min_frames: 15
+      default_frames: 60
+      max_frames: 150
+    parameters:
+      start_scale: 1.08
+      end_scale: 1
+      intensity_min: 0
+      intensity_max: 2
+  - name: orbit
+    purpose: "以小幅二维环绕模拟展示车辆体量，不替代真实三维镜头"
+    duration:
+      min_frames: 30
+      default_frames: 75
+      max_frames: 180
+    parameters:
+      horizontal_shift_px: 28
+      vertical_shift_px: 8
+      rotation_degrees: 1.5
+  - name: tracking
+    purpose: "沿主体行进方向保持视线连续"
+    duration:
+      min_frames: 18
+      default_frames: 60
+      max_frames: 150
+    parameters:
+      travel_px: 54
+      direction: left_to_right
+      intensity_min: 0
+      intensity_max: 2
+  - name: parallax
+    purpose: "用前后景差速建立层次，不伪造车辆真实速度"
+    duration:
+      min_frames: 24
+      default_frames: 75
+      max_frames: 180
+    parameters:
+      foreground_shift_px: 42
+      background_shift_px: 16
+      depth_strength: 1
+text:
+  - name: title_reveal
+    purpose: "按阅读层级揭示章节标题"
+    duration:
+      min_frames: 10
+      default_frames: 24
+      max_frames: 45
+    parameters:
+      translate_y_px: 44
+      opacity_from: 0
+      opacity_to: 1
+  - name: keyword_highlight
+    purpose: "在完整可读字幕中强调单个关键词组"
+    duration:
+      min_frames: 8
+      default_frames: 18
+      max_frames: 36
+    parameters:
+      max_keywords: 1
+      highlight_style: background_sweep
+      preserve_full_text: true
+  - name: number_counter
+    purpose: "从批准起点平滑计数到精确终值"
+    duration:
+      min_frames: 15
+      default_frames: 60
+      max_frames: 120
+    parameters:
+      start_value: 0
+      decimal_places: 0
+      tabular_numbers: true
+data:
+  - name: counter
+    purpose: "展示单个核心指标及其单位"
+    duration:
+      min_frames: 30
+      default_frames: 75
+      max_frames: 150
+    parameters:
+      value_animation: number_counter
+      require_unit: true
+      require_claim_id: true
+  - name: comparison_bar
+    purpose: "在统一比例尺下比较两个已核验值"
+    duration:
+      min_frames: 45
+      default_frames: 90
+      max_frames: 180
+    parameters:
+      max_series: 2
+      shared_scale: true
+      baseline: 0
+  - name: ranking
+    purpose: "按批准排序展示有限数量的排名项"
+    duration:
+      min_frames: 60
+      default_frames: 120
+      max_frames: 210
+    parameters:
+      max_items: 5
+      stable_order_after_reveal: true
+      require_source: true
+transition:
+  - name: light_wipe
+    purpose: "用短促光带连接相关镜头"
+    duration:
+      min_frames: 8
+      default_frames: 14
+      max_frames: 24
+    parameters:
+      direction: left_to_right
+      peak_opacity: 0.9
+      edge_softness_px: 90
+  - name: cinematic_blur
+    purpose: "用受控焦点变化连接情绪连续的镜头"
+    duration:
+      min_frames: 12
+      default_frames: 18
+      max_frames: 30
+    parameters:
+      max_blur_px: 14
+      overlay_opacity: 0.3
+      hold_frames: 2
+  - name: zoom_transition
+    purpose: "用于章节或主体切换的短促尺度过渡"
+    duration:
+      min_frames: 8
+      default_frames: 15
+      max_frames: 24
+    parameters:
+      start_scale: 0.7
+      end_scale: 1.8
+      peak_opacity: 0.72

@@ -1,0 +1,47 @@
+schema_version: 1
+style_id: bmw_editorial
+brand: BMW
+status: editorial_reference
+official_brand_guideline: false
+visual_identity:
+  principles:
+    - engineering_precision
+    - driver_focus
+    - restrained_premium
+  composition: "clean geometry with vehicle proportions kept natural"
+  logo_policy: "use only cleared original assets; never recreate or imply endorsement"
+color_direction:
+  base:
+    - graphite
+    - clean_white
+  accents:
+    - cool_blue
+    - brushed_metal
+  contrast: crisp_high_legibility
+camera_style:
+  preferred_shots:
+    - three_quarter_vehicle
+    - driver_cockpit
+    - engineering_detail
+  focal_length_mm:
+    - 35
+    - 50
+    - 85
+  composition: balanced_dynamic_lines
+motion_style:
+  tone: precise_controlled_dynamic
+  preferred:
+    - parallel_tracking
+    - short_orbit
+    - measured_push_in
+  prohibited:
+    - distorted_wide_angle
+    - purposeless_speed_ramp
+audio_style:
+  narrator:
+    provider: minimax
+    voice: "沉曜男声"
+  bgm: restrained_electronic_with_precise_pulse
+  ambience: clean_road_and_cabin_detail
+  vehicle_sfx: "authentic powertrain only; never substitute performance sound"
+  mix_priority: narration_first

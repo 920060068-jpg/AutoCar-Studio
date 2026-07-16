@@ -1,0 +1,97 @@
+schema_version: 1
+dictionary_name: autocar_studio_pronunciation
+semantic_types:
+  - quantity
+  - money
+  - percentage
+  - date
+  - time
+  - decimal
+  - range
+  - model_name
+  - product_name
+  - acronym
+  - phone_or_code
+  - version
+  - engine_displacement
+  - battery_capacity
+  - distance
+  - speed
+  - power
+  - torque
+rules:
+  display_text_must_remain_unchanged: true
+  tts_text_must_be_separate: true
+  semantic_classification_required: true
+  unknown_pronunciation_action: blocked
+entries:
+  - source_text: "Porsche 911"
+    semantic_type: model_name
+    spoken_text: "保时捷九一一"
+    context: porsche_model
+    status: approved
+  - source_text: "911"
+    semantic_type: model_name
+    spoken_text: "九一一"
+    context: porsche_model
+    status: approved
+  - source_text: "718"
+    semantic_type: model_name
+    spoken_text: "七一八"
+    context: porsche_model
+    status: approved
+  - source_text: "992"
+    semantic_type: model_name
+    spoken_text: "九九二"
+    context: porsche_model
+    status: approved
+  - source_text: "SU7"
+    semantic_type: model_name
+    spoken_text: "S U 七"
+    context: xiaomi_model
+    status: approved
+  - source_text: "YU7"
+    semantic_type: model_name
+    spoken_text: "Y U 七"
+    context: xiaomi_model
+    status: approved
+  - source_text: "Cayenne"
+    semantic_type: product_name
+    spoken_text: "卡宴"
+    context: porsche_model
+    status: approved
+  - source_text: "Macan"
+    semantic_type: product_name
+    spoken_text: "Macan"
+    context: porsche_model
+    status: provider_native_verified
+  - source_text: "Taycan"
+    semantic_type: product_name
+    spoken_text: "Taycan"
+    context: porsche_model
+    status: provider_native_verified
+  - source_text: "BMW"
+    semantic_type: acronym
+    spoken_text: "B M W"
+    context: brand
+    status: approved
+  - source_text: "AMG"
+    semantic_type: acronym
+    spoken_text: "A M G"
+    context: model_badge
+    status: approved
+  - source_text: "GT"
+    semantic_type: acronym
+    spoken_text: "G T"
+    context: model_badge
+    status: approved
+  - source_text: "PHEV"
+    semantic_type: acronym
+    spoken_text: "P H E V"
+    context: powertrain
+    status: approved
+  - source_text: "BEV"
+    semantic_type: acronym
+    spoken_text: "B E V"
+    context: powertrain
+    status: approved

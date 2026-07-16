@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "dataset": "style_history",
+  "purpose": "记录已批准的叙事风格与使用上下文，控制表达重复、受众偏科和不适合敏感新闻的风格。",
+  "field_structure": {
+    "record_id": "全局唯一字符串",
+    "job_id": "关联生产任务 ID",
+    "revision": "正整数版本",
+    "topic_id": "选题 ID",
+    "category": "内容类别",
+    "audience_type": "主要受众类型",
+    "narrative_template": "使用的内容模板",
+    "tone": "editorial、analytical、cautionary 或 comparative",
+    "emotion_curve": "按顺序记录的情绪节点数组",
+    "conflict_type": "基于事实的冲突类型",
+    "retention_pattern": "信息揭示顺序摘要",
+    "comment_prompt_type": "评论问题类型",
+    "risk_level": "内容风险等级",
+    "approval_status": "approved、rejected 或 superseded",
+    "approved_by": "自动审核器或明确的人工覆盖者",
+    "approved_at": "ISO-8601 时间",
+    "supersedes": "被更正记录 ID 或空字符串"
+  },
+  "update_rules": [
+    "仅在 Story Intelligence 自动审核批准或明确人工覆盖后追加风格记录。",
+    "记录只追加，不覆盖历史；修订使用新 revision 和 supersedes。",
+    "选择风格前检查近期类别、受众、情绪曲线和冲突类型，避免机械重复。",
+    "事故、伤亡和公共安全主题不得复用娱乐化、对立化或刺激性风格。",
+    "风格历史只能辅助决策，不能凌驾于事实、版权、安全和自动审核。"
+  ],
+  "records": []
+}

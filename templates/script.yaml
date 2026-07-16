@@ -1,0 +1,34 @@
+schema_version: 1
+template_name: script
+script:
+  job_id: "<required>"
+  revision: 1
+  topic_id: "<required>"
+  title: "<required>"
+  target_duration_seconds: 40
+  narrator:
+    provider: minimax
+    voice: "沉曜男声"
+  hook:
+    narration: "<required>"
+    claim_ids:
+      - "<claim_id>"
+    on_screen_text: "<required>"
+  body:
+    - segment_id: segment_01
+      segment_type: narrated
+      narration: "<required when narrated; empty when intentional_silence>"
+      intentional_silence: false
+      claim_ids:
+        - "<claim_id>"
+      on_screen_text: "<required>"
+      pronunciation_notes:
+        - "<optional>"
+  ending:
+    narration: "<required>"
+    claim_ids:
+      - "<claim_id_or_empty_for_opinion>"
+    call_to_action: "<optional>"
+  estimated_duration_seconds: 0
+  editorial_status: draft
+  approved_by: ""

@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "dataset": "script_history",
+  "purpose": "记录脚本 revision、结构和审核结果，用于追溯事实变化、控制 Hook 与叙事结构重复；不保存未脱敏的账号数据。",
+  "field_structure": {
+    "record_id": "全局唯一字符串",
+    "job_id": "关联生产任务 ID",
+    "revision": "正整数版本",
+    "script_id": "脚本 ID",
+    "news_id": "关联新闻 ID",
+    "duration_target": "25、40 或 60",
+    "template_name": "使用的内容模板",
+    "claim_ids": "已核验声明 ID 数组",
+    "hook_signature": "用于本地重复检查的标准化 Hook 特征",
+    "structure_signature": "Hook、Facts、Analysis、Impact、CTA 顺序摘要",
+    "script_path": "本地脚本文件路径",
+    "script_checksum": "脚本校验和",
+    "approval_status": "draft、approved、changes_requested、rejected 或 superseded",
+    "approved_by": "自动审核器、明确的人工覆盖者或空字符串",
+    "approved_at": "ISO-8601 时间或空字符串",
+    "supersedes": "被修订记录 ID 或空字符串"
+  },
+  "update_rules": [
+    "每个生成草稿以新 revision 追加，禁止覆盖旧脚本记录。",
+    "只有自动审核批准或明确人工覆盖的版本可以进入分镜，并必须记录审核主体、时间和校验和。",
+    "事实、模板、时长或文字变化都必须创建新 revision。",
+    "写入前检查 hook_signature 和 structure_signature；重复时改写或记录人工保留理由。",
+    "没有本地证据时不得记录播放、留存、转化或评论表现。"
+  ],
+  "records": []
+}

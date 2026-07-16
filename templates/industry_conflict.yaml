@@ -1,0 +1,44 @@
+schema_version: 1
+template_name: industry_conflict
+topic_type: industry_conflict
+risk_level: elevated
+players:
+  - player_id: player_001
+    name: "<company institution or group>"
+    role: "<required>"
+    verified_position: "<what this player officially did or said>"
+    claim_ids:
+      - "<claim_id>"
+conflict:
+  type: "<price|technology|supply_chain|policy|market_share|public_statement>"
+  description: "<verified disagreement or competing interest>"
+  timeline: "<start and latest verified update>"
+  claim_ids:
+    - "<claim_id>"
+winner_loser:
+  status: undetermined
+  short_term_winner: ""
+  short_term_loser: ""
+  criteria: "<price share cost access or another measurable basis>"
+  evidence: ""
+  label: editorial_analysis
+consumer_effect:
+  price: "<verified effect or unknown>"
+  choice: "<verified effect or unknown>"
+  service_or_risk: "<verified effect or unknown>"
+  uncertainty: "<required>"
+  comment_prompt: "<neutral question focused on consumer outcome>"
+required_facts:
+  - 各方身份、原始声明与行动时间
+  - 冲突涉及的可验证利益和市场范围
+  - 胜负判断采用的指标和时间范围
+  - 对消费者价格、选择、服务或风险的实际影响
+prohibited_shortcuts:
+  - 把营销口水战写成已确认行业结论
+  - 在缺少统一指标时宣布绝对赢家或输家
+  - 制造品牌粉圈对立或使用侮辱性标签
+  - 把预测写成已经发生的市场结果
+approval:
+  status: draft
+  approved_by: ""
+  approved_at: ""

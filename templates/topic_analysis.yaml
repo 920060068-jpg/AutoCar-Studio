@@ -1,0 +1,48 @@
+schema_version: 1
+template_name: topic_analysis
+analysis:
+  job_id: "<required>"
+  revision: 1
+  topic:
+    topic_id: "<required>"
+    title: "<required>"
+    summary: "<required>"
+    event_time: "<ISO-8601 or empty>"
+    collected_at: "<ISO-8601>"
+  source:
+    primary_source_id: "<required>"
+    source_ids:
+      - "<source_id>"
+    highest_level: "<primary_official|professional_media|industry_data>"
+    reliable_source_count: 0
+  category: "<price_war|new_car_launch|recall|sales_ranking|technology|industry_policy|other>"
+  score:
+    total: 0
+    scale: "0-100"
+    dimensions:
+      freshness: 0
+      audience_value: 0
+      automotive_relevance: 0
+      evidence_strength: 0
+      visual_potential: 0
+      asset_readiness: 0
+      information_gain: 0
+    decision: pending
+  reason:
+    selection_reason: "<required>"
+    information_gain: "<required>"
+    asset_feasibility: "<required>"
+  risk:
+    level: "<low|medium|high|blocked>"
+    types: []
+    copyright_risk: "<low|medium|high|unknown>"
+    safety_risk: "<low|medium|high>"
+    automatic_review_required: true
+    notes: ""
+  historical_deduplication:
+    status: pending
+    matched_topic_ids: []
+    decision_reason: "<required>"
+  status: candidate
+  reviewed_by: ""
+  reviewed_at: ""

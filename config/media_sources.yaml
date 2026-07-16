@@ -1,0 +1,85 @@
+schema_version: 1
+policy:
+  request_timeout_ms: 15000
+  max_pages_per_run: 40
+  max_download_bytes: 268435456
+  max_redirects: 5
+  download_unverified_candidates: true
+  allowed_protocols:
+    - "https:"
+  signed_query_keys:
+    - signature
+    - sig
+    - token
+    - expires
+    - policy
+    - key-pair-id
+    - x-amz-signature
+    - x-amz-credential
+  forbidden_media_extensions:
+    - m3u8
+    - mpd
+  login_markers:
+    - login
+    - sign in
+    - 登录
+    - 登陆
+    - captcha
+    - 验证码
+  prohibited_source_patterns:
+    - google.com/search
+    - googleusercontent.com
+    - baidu.com/s
+    - image.baidu.com
+    - douyin.com
+    - bilibili.com
+    - xiaohongshu.com
+
+source_tiers:
+  A:
+    - brand_official_site
+    - official_newsroom
+    - official_media_library
+    - official_launch
+    - official_investor_relations
+    - government_regulator
+    - stock_exchange_filing
+  B:
+    - licensed_pr_platform
+    - licensed_automotive_media
+    - user_licensed_stock_platform
+
+brands:
+  xiaomi:
+    canonical_name: Xiaomi Auto
+    aliases:
+      - Xiaomi
+      - Xiaomi EV
+      - 小米汽车
+      - 小米
+    allowed_domains:
+      - xiaomiev.com
+      - mi.com
+      - xiaomi.com
+      - ir.mi.com
+      - hkexnews.hk
+      - news.cision.com
+      - cision.com
+    source_only_domains:
+      - weibo.com
+      - weixin.qq.com
+    seed_urls:
+      - "https://www.xiaomiev.com/"
+      - "https://www.xiaomiev.com/skynomad"
+      - "https://www.mi.com/global/discover/newsroom"
+      - "https://www.mi.com/global/about/mediakit/"
+      - "https://ir.mi.com/news-events/announcements"
+      - "https://news.cision.com/pt/xiaomi-technology-portugal/r/xiaomi-apresenta-a-skynomad--suv-inteligentes--espacosos-e-reconfiguraveis%2Cc639192886370000000"
+    usage_terms_urls:
+      xiaomiev.com: https://www.xiaomiev.com/legal/user-agreement
+      mi.com: https://www.mi.com/global/about/terms/
+      xiaomi.com: https://www.mi.com/global/about/terms/
+      ir.mi.com: https://ir.mi.com/
+      hkexnews.hk: https://www.hkexnews.hk/
+      news.cision.com: https://www.cision.com/legal/terms-and-conditions/
+      cision.com: https://www.cision.com/legal/terms-and-conditions/

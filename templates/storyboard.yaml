@@ -1,0 +1,62 @@
+schema_version: 2
+template_name: storyboard
+storyboard:
+  job_id: "<required>"
+  revision: 1
+  aspect_ratio: "9:16"
+  width: 1080
+  height: 1920
+  fps: 30
+  total_duration_seconds: 40
+  brand_style: brand_styles/autocar_default.yaml
+  presentation_format: dynamic_editorial_video
+  static_slideshow_allowed: false
+  shots:
+    - shot_id: shot_01
+      script_segment_id: segment_01
+      start_seconds: 0
+      duration: 5
+      visual:
+        description: "<what appears on screen>"
+        purpose: "<what this shot proves or explains>"
+        claim_ids:
+          - "<claim_id>"
+        on_screen_text: "<required or empty>"
+        lighting: "<natural|neutral_editorial|studio|documentary>"
+      camera:
+        shot_size: "<extreme_wide|wide|medium|close_up|detail>"
+        focal_length_mm: 35
+        angle: eye_level
+      movement:
+        type: "<locked|pan|tilt|push_in|pull_out|tracking|orbit>"
+        direction: none
+        speed: controlled
+        plan: "<required>"
+      audio:
+        narration: "<script text/reference, or empty for intentional silence>"
+        narration_required: true
+        intentional_silence: false
+        claim_ids:
+          - "<claim_id>"
+        ambience: ""
+        sync_notes: ""
+      asset:
+        request_ids:
+          - "<asset_request_id>"
+        required: true
+        fallback_request_id: ""
+      engine: remotion
+      segment_role: visual_segment
+      engine_reason: "<required>"
+      presenter_required: false
+      presenter_reason: ""
+      preview_frame: "<required local path>"
+      preview_status: pending
+      subtitle_safe_area: brand_default
+      transition_in: none
+      transition_out: "<required unless final shot>"
+      copyright_status: pending
+  approval:
+    status: pending
+    reviewer: ""
+    reviewed_at: ""

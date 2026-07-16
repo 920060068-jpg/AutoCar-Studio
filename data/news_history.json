@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "dataset": "news_history",
+  "purpose": "记录已整理新闻候选及其来源、事件键和人工决定，为旧闻识别和跨来源合并提供本地索引；不替代事实报告。",
+  "field_structure": {
+    "record_id": "全局唯一字符串",
+    "job_id": "关联生产任务 ID",
+    "revision": "正整数版本",
+    "news_id": "新闻候选 ID",
+    "canonical_event": "标准化事件描述",
+    "category": "内容类别",
+    "entity_keys": "品牌、车型、机构和事件键数组",
+    "source_ids": "来源 ID 数组",
+    "published_at": "原始新闻 ISO-8601 时间",
+    "collected_at": "本地采集 ISO-8601 时间",
+    "fact_status": "pending、verified、disputed、outdated 或 blocked",
+    "decision": "candidate、selected、deprioritized、rejected 或 blocked",
+    "decision_reason": "人工决定理由",
+    "content_checksum": "标准化候选内容校验和",
+    "supersedes": "被更正记录 ID 或空字符串"
+  },
+  "update_rules": [
+    "News Intelligence 完成整理后可追加 candidate；事实状态只能由 Fact Checker 的报告更新为新 revision。",
+    "记录只追加，不覆盖或删除；更正必须填写 supersedes。",
+    "写入前按 canonical_event、entity_keys、发布时间和 content_checksum 检查重复。",
+    "历史相似不能单独证明事实错误，也不能绕过人工选题决定。",
+    "不得自动抓取平台指标，不得存储账号凭据、个人信息或访问令牌。"
+  ],
+  "records": []
+}

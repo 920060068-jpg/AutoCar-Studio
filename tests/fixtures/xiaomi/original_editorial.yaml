@@ -1,0 +1,10 @@
+schema_version: 1
+fixture: xiaomi_original_editorial_visual
+mode: original_editorial_visual
+external_media_allowed: false
+restricted_asset_dependency: false
+components:
+  - original_dynamic_typography
+  - verified_data_animation
+  - original_relationship_diagram
+expected_gate: pass

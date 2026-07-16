@@ -1,0 +1,149 @@
+schema_version: 2
+dataset: synthetic_foundation_sample
+storyboard:
+  job_id: foundation_sample_job
+  revision: 1
+  aspect_ratio: "9:16"
+  width: 1080
+  height: 1920
+  fps: 30
+  total_duration_seconds: 42
+  brand_style: brand_styles/autocar_default.yaml
+  presentation_format: dynamic_editorial_video
+  static_slideshow_allowed: false
+  shots:
+    - shot_id: shot_01
+      script_segment_id: segment_01
+      start_seconds: 0
+      duration: 14
+      visual:
+        description: "Foundation 本地结构验证信息卡"
+        purpose: "说明这是本地结构验证样例，不表达真实新闻事实"
+        claim_ids:
+          - synthetic_claim_001
+        on_screen_text: "Foundation 本地结构验证"
+        lighting: neutral_editorial
+      camera:
+        shot_size: medium
+        focal_length_mm: 50
+        angle: eye_level
+      movement:
+        type: locked
+        direction: none
+        speed: controlled
+        plan: "信息卡采用受控入场、数据强调和镜头内层级变化"
+      audio:
+        narration: "synthetic segment 01"
+        narration_required: true
+        intentional_silence: false
+        claim_ids:
+          - synthetic_claim_001
+        ambience: ""
+        sync_notes: "local validation only"
+      asset:
+        request_ids:
+          - foundation_doc
+        required: true
+        fallback_request_id: ""
+      engine: remotion
+      segment_role: visual_segment
+      engine_reason: "最终时间线和静态信息卡由 Remotion 管理"
+      presenter_required: false
+      presenter_reason: ""
+      preview_frame: data/runtime/foundation_sample/previews/shot_01.png
+      preview_status: planned
+      subtitle_safe_area: brand_default
+      transition_in: none
+      transition_out: masked_wipe
+      copyright_status: project_owned
+    - shot_id: shot_02
+      script_segment_id: segment_02
+      start_seconds: 14
+      duration: 14
+      visual:
+        description: "可追溯的数据卡片结构"
+        purpose: "展示可追溯的数据卡片结构"
+        claim_ids:
+          - synthetic_claim_002
+        on_screen_text: "可追溯数据卡片"
+        lighting: neutral_editorial
+      camera:
+        shot_size: close_up
+        focal_length_mm: 70
+        angle: eye_level
+      movement:
+        type: push_in
+        direction: forward
+        speed: controlled
+        plan: "数据卡按信息优先级分步入场并用转场衔接"
+      audio:
+        narration: ""
+        narration_required: false
+        intentional_silence: true
+        claim_ids: []
+        ambience: ""
+        sync_notes: "intentional silent visual beat for local validation"
+      asset:
+        request_ids:
+          - brand_style
+        required: true
+        fallback_request_id: ""
+      engine: hyperframes
+      segment_role: visual_segment
+      engine_reason: "局部数据动画适合 HTML 与 GSAP"
+      presenter_required: false
+      presenter_reason: ""
+      preview_frame: data/runtime/foundation_sample/previews/shot_02.png
+      preview_status: planned
+      subtitle_safe_area: brand_default
+      transition_in: masked_wipe
+      transition_out: controlled_crossfade
+      copyright_status: project_owned
+    - shot_id: shot_03
+      script_segment_id: segment_03
+      start_seconds: 28
+      duration: 14
+      visual:
+        description: "自动审核状态卡"
+        purpose: "以自动门禁提示结束样例"
+        claim_ids:
+          - synthetic_claim_003
+        on_screen_text: "自动审核未通过"
+        lighting: neutral_editorial
+      camera:
+        shot_size: medium
+        focal_length_mm: 50
+        angle: eye_level
+      movement:
+        type: pull_out
+        direction: backward
+        speed: controlled
+        plan: "审核状态通过时间线动画收束，不使用静态翻页"
+      audio:
+        narration: "synthetic segment 03"
+        narration_required: true
+        intentional_silence: false
+        claim_ids:
+          - synthetic_claim_003
+        ambience: ""
+        sync_notes: "local validation only"
+      asset:
+        request_ids:
+          - foundation_doc
+        required: true
+        fallback_request_id: ""
+      engine: remotion
+      segment_role: visual_segment
+      engine_reason: "由主时间线输出审核状态"
+      presenter_required: false
+      presenter_reason: ""
+      preview_frame: data/runtime/foundation_sample/previews/shot_03.png
+      preview_status: planned
+      subtitle_safe_area: brand_default
+      transition_in: controlled_crossfade
+      transition_out: none
+      copyright_status: project_owned
+  approval:
+    status: foundation_sample
+    reviewer: ""
+    reviewed_at: ""

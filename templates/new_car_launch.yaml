@@ -1,0 +1,59 @@
+schema_version: 2
+template_name: new_car_launch
+topic_type: new_car_launch
+risk_level: standard
+hook:
+  text: "<single positioning change or audience benefit>"
+  claim_ids:
+    - "<claim_id>"
+  pattern: positioning_change
+appearance:
+  exterior: "<verified design change>"
+  interior: "<verified cabin change>"
+  continuity_notes: "<model year trim and color controls>"
+  claim_ids: []
+technology:
+  highlights:
+    - "<verified technology or feature>"
+  production_status: "<research|announced|pre_sale|mass_production|delivering>"
+  limitations: []
+  claim_ids: []
+price:
+  amount: "<official price pre-sale price or unknown>"
+  price_type: "<official|pre_sale|unknown>"
+  region: "<required>"
+  conditions: []
+  claim_ids: []
+competitors:
+  - name: "<comparable model>"
+    comparison_scope: "<price segment size powertrain or use case>"
+    same_scope_confirmed: false
+    claim_ids: []
+market_effect:
+  consumer_choice: "<evidence-based impact or watch point>"
+  segment_effect: "<editorial analysis>"
+  uncertainty: "<what remains unknown>"
+  comment_prompt: "<neutral market question>"
+required_facts:
+  - 官方车型名称与版本
+  - 上市或发布状态
+  - 官方价格或预售价
+  - 核心尺寸、动力、续航与配置
+  - 交付时间和适用市场
+narrative_beats:
+  - "新车定位"
+  - "最重要的三项变化"
+  - "价格与目标竞品"
+  - "尚未确认的信息"
+visual_intents:
+  - 官方外观与内饰素材
+  - 参数信息卡
+  - 竞品定位图
+prohibited_shortcuts:
+  - 混用不同年款或配置素材
+  - 把预售价写成正式售价
+  - 推测未公布的续航或交付数据
+approval:
+  status: draft
+  approved_by: ""
+  approved_at: ""

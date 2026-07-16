@@ -1,0 +1,41 @@
+schema_version: 2
+template_name: new_car
+topic_type: new_car
+canonical_detail_template: templates/new_car_launch.yaml
+risk_level: standard
+hook:
+  text: "<single verified positioning change or audience benefit>"
+  claim_ids:
+    - "<claim_id>"
+facts:
+  appearance: "<verified exterior or interior change>"
+  technology: "<verified feature and production status>"
+  price: "<official price pre-sale price or unknown>"
+  delivery: "<confirmed timing or unknown>"
+  claim_ids: []
+analysis:
+  positioning: "<segment and use-case analysis>"
+  competitors: []
+  limitations: []
+  basis_claim_ids: []
+  label: editorial_analysis
+impact:
+  consumer_choice: "<confirmed change or watch point>"
+  market_effect: "<bounded analysis>"
+  uncertainty: "<required>"
+cta:
+  text: "<neutral question about product value or positioning>"
+  sensitive_topic_allowed: false
+pipeline_mapping:
+  Hook: hook
+  Facts: facts
+  Analysis: analysis
+  Impact: impact
+  CTA: cta
+validation:
+  - 使用 canonical_detail_template 检查年款、配置、价格类型、地区和交付状态
+  - 禁止把预售价写成正式售价或混用不同配置素材
+approval:
+  status: draft
+  approved_by: ""
+  approved_at: ""

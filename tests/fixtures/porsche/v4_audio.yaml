@@ -1,0 +1,25 @@
+schema_version: 1
+fixture: porsche_audio_semantics_and_fit
+verified_data:
+  global_deliveries: 122306
+  china_deliveries: 14501
+number_semantics:
+  quantity_display: "14,501"
+  quantity_tts: "一万四千五百零一"
+  model_display: "Porsche 911"
+  model_tts: "保时捷九一一"
+timing_budget:
+  picture_lock_seconds: 38.058667
+  minimum_safety_margin_seconds: 0.15
+  required_before_tts: true
+audio_fit:
+  status: pass
+  changed_segment_ids:
+    - shot_08
+picture_lock:
+  visual_fact_hash: "sha256:fixture-porsche-visual-facts"
+  locked: true
+checkpoint:
+  interrupted_stage: minimax_tts
+  last_successful_stage: audio_preflight
+  resume_stage: minimax_tts

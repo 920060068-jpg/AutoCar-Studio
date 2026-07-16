@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "dataset": "hook_history",
+  "purpose": "记录已批准 Hook 的结构、事实映射和目标受众，用于减少近期重复并审查策略变化。",
+  "field_structure": {
+    "record_id": "全局唯一字符串",
+    "job_id": "关联生产任务 ID",
+    "revision": "正整数版本",
+    "topic_id": "选题 ID",
+    "hook_text": "已批准前三秒 Hook",
+    "normalized_hook": "用于本地相似度检查的标准化文本",
+    "pattern": "benefit、change、question、contrast 或 consequence",
+    "claim_ids": "Hook 使用的已核验声明 ID 数组",
+    "audience_type": "car_buyer、car_enthusiast 或 general_audience",
+    "emotion_entry": "Hook 的起始情绪",
+    "approval_status": "approved、rejected 或 superseded",
+    "approved_by": "自动审核器或明确的人工覆盖者",
+    "approved_at": "ISO-8601 时间",
+    "outcome": "有本地证据时记录 observed，否则为 unobserved",
+    "supersedes": "被更正记录 ID 或空字符串"
+  },
+  "update_rules": [
+    "只有自动审核通过的 Hook 才能追加；被拒绝版本可记录但不得作为复用范例。",
+    "记录只追加；文字或事实映射变化必须创建新 revision。",
+    "写入前检查 normalized_hook，近期高度相似时必须改写或记录保留理由。",
+    "没有本地证据时 outcome 必须保持 unobserved，禁止编造播放、留存或评论数据。",
+    "不得通过外部 API 自动拉取指标，不得存储用户级行为或个人信息。"
+  ],
+  "records": []
+}

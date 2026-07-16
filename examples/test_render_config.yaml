@@ -1,0 +1,53 @@
+schema_version: 1
+dataset: synthetic_render_engine_test
+render_config:
+  job_id: render_engine_test_job
+  revision: 1
+  resolution:
+    width: 1080
+    height: 1920
+    aspect_ratio: "9:16"
+  fps: 30
+  codec:
+    container: mp4
+    video: h264
+    profile: high
+    pixel_format: yuv420p
+    color_space: rec709
+    bitrate_mode: crf
+    crf: 18
+  audio:
+    codec: aac
+    sample_rate_hz: 48000
+    channels: 2
+    bitrate_kbps: 192
+    target_lufs: -16
+    true_peak_dbtp: -1
+  duration:
+    min_seconds: 38
+    max_seconds: 45
+    expected_seconds: 42
+  inputs:
+    storyboard_path: examples/test_storyboard.yaml
+    asset_manifest_path: data/assets.sample.yaml
+    motion_plan_path: templates/motion_plan.yaml
+    audio_plan_path: ""
+    caption_path: ""
+  output:
+    directory: output/runtime/render_engine_test_job/1
+    filename: test.mp4
+    overwrite: false
+  execution:
+    external_api_allowed: false
+    auto_publish: false
+    status: blocked
+    blockers:
+      - dependencies_not_installed
+      - audio_plan_missing
+      - caption_data_missing
+      - preview_approval_missing
+      - automatic_review_pending
+  automatic_review:
+    status: pending
+    reviewer: daily_auto_qc
+    reviewed_at: ""

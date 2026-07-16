@@ -1,0 +1,201 @@
+schema_version: 3
+project:
+  name: AutoCar Studio
+  version: V4
+  operating_system: Permanent Operating System & Daily Automation V1
+  phase: Daily Automation Control Layer
+foundation:
+  enabled: true
+  external_api_enabled: true
+  external_api_scopes:
+    - minimax_tts
+  video_generation_enabled: true
+  local_render_enabled: true
+production:
+  videos_per_day: 1
+  daily_start_time: "12:00"
+  timezone_mode: local_system_timezone
+  platform: douyin
+production_modes:
+  default: editorial
+  press_kit_requires_local_authorized_assets: true
+  unavailable_media_fallback: original_editorial_visual
+video:
+  width: 1080
+  height: 1920
+  aspect_ratio: "9:16"
+  resolution: "1080x1920"
+  fps: 30
+  duration_target_seconds:
+    min: 38
+    max: 45
+automation:
+  enabled: true
+  mode: daily_auto
+  max_daily_productions: 1
+  start_time_local: "12:00"
+  catch_up_after_missed_start: true
+  resume_from_checkpoint: true
+  allow_parallel_daily_runs: false
+  backfill_previous_dates: false
+  state_path: database/daily_production_state.json
+  checkpoint_directory: database/checkpoints
+  log_directory: logs/daily
+  lock_path: database/.daily-production.lock
+  decisions:
+    - approved
+    - revise
+    - retry
+    - blocked
+    - failed
+retries:
+  director_revision_max: 3
+  script_revision_max: 2
+  render_fix_max: 3
+  audio_generation_max: 3
+quality:
+  director_score_operator: greater_than
+  director_score_threshold: 90
+  final_quality_score_operator: greater_than
+  final_quality_score_threshold: 90
+  final_quality_weights:
+    factual_accuracy: 20
+    opening_three_seconds: 15
+    narrative_and_viewpoint: 15
+    shot_design: 15
+    pacing_and_retention: 10
+    visual_quality: 10
+    subtitles_and_information: 5
+    audio_quality: 5
+    copyright_and_compliance: 5
+  hard_gates:
+    - fact_check
+    - data_sources
+    - director_score
+    - storyboard
+    - asset_or_original_visual_manifest
+    - picture_render
+    - picture_lock
+    - subtitle
+    - audio
+    - audio_sync
+    - final_render
+    - technical_qc
+    - content_qc
+    - copyright_editorial_policy
+    - final_quality_score
+editorial_mode:
+  enabled: true
+  default: true
+  auto_switch_trigger: official_video_legally_unavailable
+  stop_restricted_video_search: true
+  wait_for_pr_assets: false
+  official_news_images_allowed: true
+  official_news_images_require_clearance: true
+  output_type: editorial_storyboard
+  allowed_visual_components:
+    - official_news_image
+    - verified_data_animation
+    - infographic
+    - timeline
+    - parameter_card
+    - map
+    - title_animation
+original_editorial_visual_mode:
+  enabled: true
+  trigger: no_legally_acquirable_external_media
+  external_media_allowed: false
+  webpage_screenshot_allowed: false
+  photorealistic_ai_vehicle_allowed: false
+  automatic_review_required: true
+  allowed_visual_components:
+    - original_abstract_vehicle_outline
+    - original_dynamic_typography
+    - verified_data_animation
+    - original_timeline
+    - original_space_diagram
+    - original_relationship_diagram
+    - original_structure_diagram
+    - original_process_diagram
+    - original_icon_scene
+    - original_choice_animation
+  visual_gates:
+    maximum_static_screen_seconds: 2
+    maximum_repeated_layouts: 0
+    maximum_identical_compositions: 0
+    maximum_seconds_without_meaningful_change: 3
+    adjacent_layout_reuse_allowed: false
+    white_card_ppt_allowed: false
+    one_core_point_per_shot: true
+audio:
+  provider: minimax
+  narrator_key: chenyao_male
+  narrator: "沉曜男声"
+  provider_voice_id: "Chinese (Mandarin)_Gentleman"
+  narration_timing:
+    full_video_occupancy_required: false
+    natural_silence_between_shots_allowed: true
+    timing_budget_required_before_tts: true
+    audio_fit_script_required_before_tts: true
+    audio_preflight_required_before_tts: true
+    minimum_safety_margin_seconds: 0.15
+    maximum_post_speed_factor: 1.15
+    auto_condense_revision_max: 2
+    formal_tts_requests_per_shot_max: 2
+    cache_identical_tts_requests: true
+    number_semantics_required_before_tts: true
+    pronunciation_dictionary_required_before_tts: true
+    display_narration_tts_text_separation_required: true
+    voice_registry_path: config/voice_registry.yaml
+    pronunciation_dictionary_path: config/pronunciation_dictionary.yaml
+    speed_calibration_required: true
+    provider_native_speed_min: 1.08
+    provider_native_speed_max: 1.20
+    chenyao_default_speed: 1.16
+    post_speed_change_allowed: false
+    priority:
+      - natural_speech
+      - subtitle_synchronization
+      - visual_rhythm
+  fallback_provider: minimax
+  fallback_voice_allowed: false
+  picture_lock_required: true
+  unavailable_action: audio_blocked
+  service_status: ready
+  connection:
+    config_source: .env
+    credential_source: dotenv
+    live_tts_enabled: true
+    voice_id_mapping_required: true
+providers:
+  hyperframes:
+    enabled: true
+    role: motion_graphics_and_visual_packaging
+    owns_master_timeline: false
+    tts_allowed: false
+  remotion:
+    enabled: true
+    role: master_timeline_editing_subtitles_audio_final_render
+    owns_master_timeline: true
+  heygen:
+    enabled: false
+    allowed_for:
+      - host_segment
+    whole_video_allowed: false
+forbidden:
+  providers:
+    - kling
+  formats:
+    - ppt
+    - image_slideshow
+    - one_sentence_one_image
+publishing:
+  auto_publish: false
+  release_candidate_only: true
+  release_candidate_review_mode: automatic
+  manual_publish_review_required: true
+  output_filename: release_candidate.mp4
+artifact_policy:
+  overwrite_existing: false
+  automatic_deletion: false
+  retain_stage_history: true

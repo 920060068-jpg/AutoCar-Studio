@@ -1,0 +1,48 @@
+schema_version: 1
+template_name: script_structure
+script:
+  job_id: "<required>"
+  revision: 1
+  topic_id: "<required>"
+  target_duration_seconds: 40
+  narrator:
+    provider: minimax
+    voice: "沉曜男声"
+  hook:
+    text: "<required>"
+    claim_ids:
+      - "<claim_id>"
+    purpose: "<why the audience should continue>"
+    estimated_seconds: 4
+  facts:
+    - text: "<required>"
+      claim_ids:
+        - "<claim_id>"
+      context: "<time region model or statistical scope>"
+      estimated_seconds: 8
+  analysis:
+    - text: "<required>"
+      basis_claim_ids:
+        - "<claim_id>"
+      label: editorial_analysis
+      estimated_seconds: 8
+  comparison:
+    enabled: false
+    text: ""
+    claim_ids: []
+    comparison_scope: ""
+    estimated_seconds: 0
+  conclusion:
+    text: "<required>"
+    type: "<confirmed_conclusion|watch_point>"
+    claim_ids: []
+    estimated_seconds: 5
+  comment_prompt:
+    text: "<specific neutral question>"
+    sensitive_topic_allowed: false
+    estimated_seconds: 3
+  total_estimated_seconds: 0
+  fact_mapping_status: pending
+  editorial_status: draft
+  approved_by: ""
+  approved_at: ""

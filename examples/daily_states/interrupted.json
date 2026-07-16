@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "productions": [
+    {
+      "production_date": "2026-07-14",
+      "timezone": "Asia/Shanghai",
+      "scheduled_start_at": "2026-07-14T04:00:00.000Z",
+      "actual_start_at": "2026-07-14T04:00:02.000Z",
+      "current_stage": "storyboard",
+      "last_successful_stage": "script",
+      "checkpoint_path": "examples/checkpoints/2026-07-14-interrupted.json",
+      "checkpoint_sha256": null,
+      "retry_count": 1,
+      "blocked_reason": "simulated process interruption",
+      "service_status": {
+        "minimax": "blocked"
+      },
+      "final_status": "interrupted",
+      "output_path": null,
+      "completed_at": null,
+      "job_id": "daily_2026-07-14_interrupted",
+      "revision": 2,
+      "updated_at": "2026-07-14T04:20:00.000Z"
+    }
+  ]
+}

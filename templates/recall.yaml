@@ -1,0 +1,23 @@
+schema_version: 1
+template_name: recall
+topic_type: recall
+risk_level: high
+required_facts:
+  - 监管机构或品牌召回公告
+  - 涉及车型、生产日期和数量
+  - 缺陷描述与潜在后果
+  - 召回措施、开始时间和用户动作
+  - 第二可靠来源
+narrative_beats:
+  - "哪些车受到影响"
+  - "风险是什么"
+  - "用户如何确认和处理"
+  - "哪些情况仍未确认"
+visual_intents:
+  - 召回公告关键段落
+  - 车型和日期范围卡片
+  - 用户操作步骤
+prohibited_shortcuts:
+  - 扩大到公告未覆盖的车型
+  - 使用事故画面制造恐慌
+  - 省略官方查询和处理方式

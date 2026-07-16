@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "dataset": "brand_history",
+  "purpose": "记录品牌在已审核内容中的角色、事实范围和叙事角度，用于控制品牌曝光偏差与重复角度；不构成品牌事实来源。",
+  "field_structure": {
+    "record_id": "全局唯一字符串",
+    "job_id": "关联生产任务 ID",
+    "revision": "正整数版本",
+    "brand_id": "标准化品牌 ID",
+    "brand_name": "品牌名称",
+    "news_id": "关联新闻 ID",
+    "script_id": "关联脚本 ID",
+    "role": "subject、competitor、source 或 context",
+    "category": "内容类别",
+    "claim_ids": "与品牌有关的已核验声明 ID 数组",
+    "editorial_angle": "本次内容角度摘要",
+    "risk_tags": "品牌相关风险标签数组",
+    "approval_status": "approved、rejected 或 superseded",
+    "approved_at": "ISO-8601 时间",
+    "supersedes": "被修订记录 ID 或空字符串"
+  },
+  "update_rules": [
+    "仅在脚本自动审核后追加，未通过事实核验的品牌声明不得写入。",
+    "记录只追加，不覆盖或删除；事实更正使用新 revision 和 supersedes。",
+    "生成新方向前检查同品牌近期类别和 editorial_angle，避免机械重复或长期偏向。",
+    "品牌历史只辅助内容平衡，不能作为来源、舆情或商业价值证据。",
+    "不得存储真实账号信息、商业机密、个人数据或未经证实的品牌评价。"
+  ],
+  "records": []
+}

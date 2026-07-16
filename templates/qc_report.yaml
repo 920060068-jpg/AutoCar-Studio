@@ -1,0 +1,137 @@
+schema_version: 1
+template_name: qc_report
+report:
+  job_id: "<required>"
+  revision: 1
+  artifact_path: "<required>"
+  artifact_sha256: "<required>"
+  gates:
+    - gate: config
+      status: pending
+      evidence: "<required>"
+      issues: []
+    - gate: fact_check
+      status: pending
+      evidence: "<required>"
+      issues: []
+    - gate: data_sources
+      status: pending
+      evidence: "<required>"
+      issues: []
+    - gate: deduplication
+      status: pending
+      evidence: "<required>"
+      issues: []
+    - gate: director_score
+      status: pending
+      evidence: "<required>"
+      issues: []
+    - gate: storyboard
+      status: pending
+      evidence: "<required>"
+      issues: []
+    - gate: asset_or_original_visual_manifest
+      status: pending
+      evidence: "<required>"
+      issues: []
+    - gate: picture_render
+      status: pending
+      evidence: "<required>"
+      issues: []
+    - gate: picture_lock
+      status: pending
+      evidence: "<required>"
+      issues: []
+    - gate: subtitle
+      status: pending
+      evidence: "<required>"
+      issues: []
+    - gate: audio
+      status: pending
+      evidence: "<required>"
+      issues: []
+    - gate: audio_sync
+      status: pending
+      evidence: "<required>"
+      issues: []
+    - gate: final_render
+      status: pending
+      evidence: "<required>"
+      issues: []
+    - gate: copyright_editorial_policy
+      status: pending
+      evidence: "<required>"
+      issues: []
+    - gate: technical_qc
+      status: pending
+      evidence: "<required>"
+      issues: []
+    - gate: content_qc
+      status: pending
+      evidence: "<required>"
+      issues: []
+    - gate: final_quality_score
+      status: pending
+      evidence: "<required>"
+      issues: []
+    - gate: automatic_review
+      status: pending
+      evidence: "<required>"
+      issues: []
+  checks:
+    - check: resolution
+      status: pending
+      evidence: "<required>"
+    - check: frame_rate
+      status: pending
+      evidence: "<required>"
+    - check: duration
+      status: pending
+      evidence: "<required>"
+    - check: black_frames
+      status: pending
+      evidence: "<required>"
+    - check: missing_assets
+      status: pending
+      evidence: "<required>"
+    - check: subtitle_bounds
+      status: pending
+      evidence: "<required>"
+    - check: audio_clipping
+      status: pending
+      evidence: "<required>"
+    - check: av_sync
+      status: pending
+      evidence: "<required>"
+    - check: duplicate_assets
+      status: pending
+      evidence: "<required>"
+    - check: low_resolution_assets
+      status: pending
+      evidence: "<required>"
+    - check: watermark_and_copyright
+      status: pending
+      evidence: "<required>"
+    - check: news_facts
+      status: pending
+      evidence: "<required>"
+    - check: data_sources
+      status: pending
+      evidence: "<required>"
+    - check: historical_duplication
+      status: pending
+      evidence: "<required>"
+    - check: visual_semantic_match
+      status: pending
+      evidence: "<required>"
+    - check: automatic_review_status
+      status: pending
+      evidence: "<required>"
+  overall_status: pending
+  director_score: 0
+  final_quality_score: 0
+  automatic_review:
+    decision: pending
+    reviewer: daily_auto_qc
+    reviewed_at: ""
+    notes: ""

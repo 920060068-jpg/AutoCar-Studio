@@ -1,0 +1,23 @@
+schema_version: 1
+template_name: industry_policy
+topic_type: industry_policy
+risk_level: high
+required_facts:
+  - 政府或监管机构正式文件
+  - 发布机关和文件编号
+  - 发布、生效和过渡期时间
+  - 适用地区、主体和车型范围
+  - 第二可靠来源或权威解读
+narrative_beats:
+  - "政策改变了什么"
+  - "何时生效、影响谁"
+  - "对消费者和企业的直接影响"
+  - "尚待细则确认的部分"
+visual_intents:
+  - 正式文件标题和编号
+  - 生效时间轴
+  - 受影响主体关系图
+prohibited_shortcuts:
+  - 使用征求意见稿冒充已生效政策
+  - 扩大政策适用范围
+  - 把媒体解读当作法规原文

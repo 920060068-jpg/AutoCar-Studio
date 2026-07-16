@@ -1,0 +1,47 @@
+schema_version: 1
+style_id: porsche_editorial
+brand: Porsche
+status: editorial_reference
+official_brand_guideline: false
+visual_identity:
+  principles:
+    - performance_precision
+    - design_continuity
+    - mechanical_detail
+  composition: "low clean lines with proportions and heritage cues accurately preserved"
+  logo_policy: "use only cleared original assets; never recreate or imply endorsement"
+color_direction:
+  base:
+    - black
+    - clean_white
+  accents:
+    - performance_red
+    - warm_metal
+  contrast: sharp_premium_legibility
+camera_style:
+  preferred_shots:
+    - low_three_quarter
+    - side_profile_tracking
+    - mechanical_detail
+  focal_length_mm:
+    - 50
+    - 85
+    - 120
+  composition: low_center_of_gravity_without_distortion
+motion_style:
+  tone: disciplined_performance
+  preferred:
+    - stable_parallel_tracking
+    - precise_orbit
+    - restrained_speed_transition
+  prohibited:
+    - unsafe_driving_glorification
+    - fake_speed_or_engine_behavior
+audio_style:
+  narrator:
+    provider: minimax
+    voice: "沉曜男声"
+  bgm: restrained_rhythmic_with_mechanical_texture
+  ambience: road_track_or_workshop_only_when_factually_relevant
+  vehicle_sfx: "use authentic model and powertrain recording only"
+  mix_priority: narration_then_authentic_mechanical_detail

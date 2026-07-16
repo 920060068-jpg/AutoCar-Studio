@@ -1,0 +1,47 @@
+schema_version: 1
+style_id: byd_editorial
+brand: BYD
+status: editorial_reference
+official_brand_guideline: false
+visual_identity:
+  principles:
+    - accessible_technology
+    - industrial_scale
+    - practical_value
+  composition: "vehicle, technology and consumer value shown in a clear hierarchy"
+  logo_policy: "use only cleared original assets; never recreate or imply endorsement"
+color_direction:
+  base:
+    - deep_graphite
+    - clean_white
+  accents:
+    - signal_red
+    - technical_cyan
+  contrast: strong_editorial_legibility
+camera_style:
+  preferred_shots:
+    - vehicle_use_case
+    - factory_process
+    - battery_and_platform_detail
+  focal_length_mm:
+    - 28
+    - 50
+    - 85
+  composition: evidence_then_benefit
+motion_style:
+  tone: confident_clear_scalable
+  preferred:
+    - production_line_tracking
+    - structured_data_build
+    - practical_scene_transition
+  prohibited:
+    - unsupported_futurism
+    - patriotic_emotional_substitution
+audio_style:
+  narrator:
+    provider: minimax
+    voice: "沉曜男声"
+  bgm: modern_electronic_with_measured_momentum
+  ambience: factory_road_and_family_use_context
+  vehicle_sfx: "match actual powertrain and driving condition"
+  mix_priority: narration_and_verified_value

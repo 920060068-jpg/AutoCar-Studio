@@ -1,0 +1,138 @@
+schema_version: 1
+dataset: synthetic_foundation_sample
+report:
+  job_id: foundation_sample_job
+  revision: 1
+  artifact_path: data/storyboard.sample.yaml
+  artifact_sha256: "ebe8dc676fe4ca1abc1a7fe3089dbd92107e44be08a4698f40a344b15d443c91"
+  gates:
+    - gate: config
+      status: passed
+      evidence: CONFIG.yaml
+      issues: []
+    - gate: fact_check
+      status: passed
+      evidence: "synthetic sample contains no real-world claims"
+      issues: []
+    - gate: data_sources
+      status: blocked
+      evidence: "synthetic sources are not publishable evidence"
+      issues: []
+    - gate: deduplication
+      status: passed
+      evidence: data/topics.sample.yaml
+      issues: []
+    - gate: director_score
+      status: blocked
+      evidence: "no production director review exists"
+      issues: []
+    - gate: storyboard
+      status: passed
+      evidence: data/storyboard.sample.yaml
+      issues: []
+    - gate: asset_or_original_visual_manifest
+      status: passed
+      evidence: data/assets.sample.yaml
+      issues: []
+    - gate: picture_render
+      status: blocked
+      evidence: "no picture render exists"
+      issues: []
+    - gate: picture_lock
+      status: blocked
+      evidence: "picture review cannot run without a render"
+      issues: []
+    - gate: subtitle
+      status: blocked
+      evidence: "no subtitle artifact exists"
+      issues: []
+    - gate: audio
+      status: blocked
+      evidence: "no narration or mix exists"
+      issues: []
+    - gate: audio_sync
+      status: blocked
+      evidence: "no audio timeline exists"
+      issues: []
+    - gate: final_render
+      status: blocked
+      evidence: "no final render exists"
+      issues: []
+    - gate: copyright_editorial_policy
+      status: passed
+      evidence: "foundation files are project-owned"
+      issues: []
+    - gate: technical_qc
+      status: blocked
+      evidence: "no video is generated in Foundation stage"
+      issues:
+        - no_render_artifact
+    - gate: content_qc
+      status: blocked
+      evidence: "no production content artifact exists"
+      issues: []
+    - gate: final_quality_score
+      status: blocked
+      evidence: "quality score cannot be calculated"
+      issues: []
+    - gate: automatic_review
+      status: blocked
+      evidence: "render artifact is absent, so automatic review cannot approve"
+      issues: []
+  checks:
+    - check: resolution
+      status: blocked
+      evidence: "no render artifact in Foundation stage"
+    - check: frame_rate
+      status: blocked
+      evidence: "no render artifact in Foundation stage"
+    - check: duration
+      status: blocked
+      evidence: "storyboard duration exists but no render artifact"
+    - check: black_frames
+      status: blocked
+      evidence: "no render artifact in Foundation stage"
+    - check: missing_assets
+      status: blocked
+      evidence: "production media is intentionally absent"
+    - check: subtitle_bounds
+      status: blocked
+      evidence: "no subtitles or render artifact"
+    - check: audio_clipping
+      status: blocked
+      evidence: "no audio artifact"
+    - check: av_sync
+      status: blocked
+      evidence: "no audio or render artifact"
+    - check: duplicate_assets
+      status: passed
+      evidence: "foundation manifest contains unique checksums"
+    - check: low_resolution_assets
+      status: blocked
+      evidence: "no production media"
+    - check: watermark_and_copyright
+      status: passed
+      evidence: "foundation files are project-owned and contain no media watermark"
+    - check: news_facts
+      status: passed
+      evidence: "synthetic sample contains no real-world claims"
+    - check: data_sources
+      status: blocked
+      evidence: "synthetic source IDs are not publishable evidence"
+    - check: historical_duplication
+      status: passed
+      evidence: data/topics.sample.yaml
+    - check: visual_semantic_match
+      status: blocked
+      evidence: "no render artifact"
+    - check: automatic_review_status
+      status: blocked
+      evidence: "hard gates are incomplete"
+  overall_status: blocked
+  director_score: 0
+  final_quality_score: 0
+  automatic_review:
+    decision: blocked
+    reviewer: daily_auto_qc
+    reviewed_at: ""
+    notes: "Foundation sample only; not publishable."

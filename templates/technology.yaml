@@ -1,0 +1,56 @@
+schema_version: 2
+template_name: technology
+topic_type: technology
+risk_level: standard
+problem:
+  description: "<real user or engineering problem>"
+  affected_scenario: "<where the problem occurs>"
+  claim_ids:
+    - "<claim_id>"
+solution:
+  description: "<what the proposed solution does>"
+  provider_claim: true
+  claim_ids:
+    - "<claim_id>"
+technology:
+  mechanism: "<plain-language mechanism>"
+  current_status: "<research|announced|testing|mass_production|delivering>"
+  verified_metrics:
+    - metric: "<name>"
+      value: "<value>"
+      test_conditions: "<required>"
+      claim_id: "<claim_id>"
+  limitations: []
+real_value:
+  user_benefit: "<current measurable value>"
+  available_now: false
+  applicable_models: []
+  evidence_label: "<verified_fact|editorial_analysis>"
+future_effect:
+  expected_change: "<bounded projection>"
+  dependencies: []
+  uncertainty: "<required>"
+  label: editorial_projection
+required_facts:
+  - 技术名称与官方定义
+  - 当前状态为研究、发布、量产或交付
+  - 可验证的性能指标和测试条件
+  - 适用车型或平台
+  - 局限、前提和安全边界
+narrative_beats:
+  - "技术解决什么问题"
+  - "与现有方案的可验证差异"
+  - "现在能否实际使用"
+  - "限制和待验证点"
+visual_intents:
+  - 原理示意图
+  - 指标与条件并列卡
+  - 量产状态时间线
+prohibited_shortcuts:
+  - 把实验室数据当作日常体验
+  - 把发布会概念当作已量产功能
+  - 隐去测试条件或限制
+approval:
+  status: draft
+  approved_by: ""
+  approved_at: ""

@@ -1,0 +1,72 @@
+schema_version: 2
+template_name: asset_manifest
+manifest:
+  job_id: "<required>"
+  revision: 1
+  storyboard_path: "<required>"
+  database_path: database/assets.json
+  cache_path: database/asset_cache.json
+  mix_policy:
+    measurement: screen_time_seconds
+    grade_ab_min_percent: 70
+    grade_d_max_percent: 30
+    grade_ab_actual_percent: 0
+    grade_d_actual_percent: 0
+    excluded_graphics_seconds: 0
+    status: pending
+  assets:
+    - asset_id: asset_001
+      shot_id: shot_01
+      additional_shot_ids: []
+      type: image
+      required: true
+      source:
+        source_type: "<project_owned|official_media_kit|public_institution|licensed_media|industry_database|ai_generated>"
+        owner: "<required>"
+        url: "<required for external source>"
+        local_path: "<required>"
+        provider: local
+        collected_at: "<ISO-8601 or empty for project-owned>"
+        sha256: "<required after file exists>"
+      license:
+        status: pending
+        type: "<required>"
+        commercial_use: false
+        platforms:
+          - douyin
+        territories:
+          - CN
+        proof_path: "<required unless project_owned>"
+        expires_at: ""
+      preview_frame: "<required for image or video production>"
+      quality:
+        grade: "<A|B|C|D>"
+        width: 0
+        height: 0
+        duration_seconds: 0
+        sample_rate_hz: 0
+        low_resolution: pending
+        watermark_status: pending
+        semantic_match_status: pending
+      duplicate:
+        exact_duplicate_of: ""
+        possible_duplicate_of: ""
+        reuse_reason: ""
+      matching:
+        database_path: database/assets.json
+        database_revision: 1
+        candidate_asset_ids: []
+        selected_reason: "<required after matching>"
+        quality_score: 0
+        source_score: 0
+        visual_score: 0
+        commercial_risk: 100
+      generation:
+        provider: ""
+        model: ""
+        prompt_digest: ""
+        generated_at: ""
+      status: pending
+  verified_data_bindings: []
+  gaps: []
+  validation_status: pending

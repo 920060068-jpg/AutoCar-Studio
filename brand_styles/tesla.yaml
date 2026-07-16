@@ -1,0 +1,47 @@
+schema_version: 1
+style_id: tesla_editorial
+brand: Tesla
+status: editorial_reference
+official_brand_guideline: false
+visual_identity:
+  principles:
+    - minimal_interface
+    - system_thinking
+    - functional_clarity
+  composition: "large clean fields with product and data kept visually separate"
+  logo_policy: "use only cleared original assets; never recreate or imply endorsement"
+color_direction:
+  base:
+    - black
+    - white
+  accents:
+    - signal_red
+    - neutral_gray
+  contrast: direct_high_legibility
+camera_style:
+  preferred_shots:
+    - clean_vehicle_profile
+    - interface_close_up
+    - charging_context
+  focal_length_mm:
+    - 35
+    - 50
+    - 85
+  composition: minimal_negative_space
+motion_style:
+  tone: direct_responsive_minimal
+  preferred:
+    - locked_frame
+    - linear_push
+    - clean_data_reveal
+  prohibited:
+    - decorative_tech_glow
+    - fake_autonomy_visualization
+audio_style:
+  narrator:
+    provider: minimax
+    voice: "沉曜男声"
+  bgm: minimal_ambient_electronic
+  ambience: authentic_electric_cabin_road_and_charging_space
+  vehicle_sfx: "never add combustion sound; designed cues must be labeled"
+  mix_priority: narration_and_interface_feedback

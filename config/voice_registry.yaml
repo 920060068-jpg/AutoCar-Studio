@@ -1,0 +1,17 @@
+schema_version: 1
+voices:
+  - logical_voice: chenyao_male
+    display_name: 沉曜男声
+    provider: minimax
+    provider_voice_id: "Chinese (Mandarin)_Gentleman"
+    language: zh-CN
+    speed_profile:
+      safe_min: 1.08
+      safe_max: 1.20
+      default: 1.16
+      calibration_candidates: [1.12, 1.16, 1.20]
+      target_chars_per_second_min: 4.5
+      target_chars_per_second_max: 5.5
+      post_speed_change_allowed: false
+    last_calibrated_at: "2026-07-16T14:17:57+08:00"
+    calibration_record: output/porsche_h1_deliveries_20260716_r1/audio_post/pronunciation_speed_r2/speed_calibration_r1.json

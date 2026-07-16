@@ -1,0 +1,64 @@
+schema_version: 2
+template_name: price_war
+topic_type: price_war
+risk_level: standard
+hook:
+  text: "<what changed and why it matters in three seconds>"
+  claim_ids:
+    - "<claim_id>"
+  pattern: price_change
+conflict:
+  type: price_vs_value
+  description: "<verified tradeoff between price conditions and actual value>"
+  claim_ids:
+    - "<claim_id>"
+data:
+  - label: "<price or condition>"
+    value: "<required>"
+    scope: "<time region model version and conditions>"
+    claim_id: "<claim_id>"
+comparison:
+  baseline: "<original price or comparable competitor>"
+  same_scope_confirmed: false
+  difference: "<required if confirmed>"
+  claim_ids: []
+impact:
+  consumer: "<purchase cost eligibility or timing impact>"
+  competitors: "<evidence-based market pressure or unknown>"
+  market: "<short-term effect or watch point>"
+  label: editorial_analysis
+ending:
+  conclusion: "<confirmed conclusion or watch point>"
+  comment_prompt: "<neutral question about price and value>"
+  sensitive_topic_allowed: false
+required_facts:
+  - 原价与当前价格
+  - 生效时间和适用地区
+  - 车型版本与配置差异
+  - 限时、置换、金融或库存条件
+  - 至少一个可比竞品的同口径价格
+narrative_beats:
+  - "变化到底是什么"
+  - "消费者实际能省多少"
+  - "限制条件和容易误读的地方"
+  - "对竞品和市场的可能影响"
+visual_intents:
+  - 官方价格公告原文
+  - 同口径价格对比卡
+  - 条件与例外高亮
+prohibited_shortcuts:
+  - 把金融月供当作裸车价
+  - 忽略地区和库存条件
+  - 使用未经证实的经销商截图作为唯一来源
+pipeline_mapping:
+  Hook: hook
+  Facts: data
+  Analysis:
+    - conflict
+    - comparison
+  Impact: impact
+  CTA: ending.comment_prompt
+approval:
+  status: draft
+  approved_by: ""
+  approved_at: ""
